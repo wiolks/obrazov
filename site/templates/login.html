@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Вход в систему{% endblock %}
+{% block header %}Вход в систему{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <form method="POST" class="auth-form">
+            <div class="form-group">
+                <label for="username">Логин:</label>
+                <input type="text" id="username" name="username" required class="form-input">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required class="form-input">
+            </div>
+            
+            <button type="submit" class="auth-button">Войти</button>
+        </form>
+        
+        <div class="auth-links">
+            <a href="/">На главную</a>
+            {% if not config.REGISTRATION_DISABLED %}
+            <span>|</span>
+            <a href="/register">Регистрация</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

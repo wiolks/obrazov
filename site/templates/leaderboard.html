@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Рейтинг игроков{% endblock %}
+{% block header %}Рейтинг игроков{% endblock %}
+
+{% block content %}
+<div class="main-container">
+  <div class="card">
+    <h3>Топ игроков</h3>
+    <ol class="leaderboard">
+      {% for username, data in users %}
+        <li>
+          {{ username }} — {{ data['points'] }} очков (уровень {{ data['level'] }})
+          {% if 'user' in session and session['user'] == username %}
+            <strong>— Это вы!</strong>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+</div>
+{% endblock %}

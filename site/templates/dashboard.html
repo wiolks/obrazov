@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Личный кабинет{% endblock %}
+{% block header %}Личный кабинет {{ username }}{% endblock %}
+
+{% block content %}
+<div class="main-container">
+  <div class="card">
+    <h3>Ваша статистика</h3>
+    <p>Уровень: <strong>{{ level }}</strong></p>
+    <p>Очки: <strong>{{ points }}</strong></p>
+    <p>Пройдено тестов: <strong>{{ tests }}</strong></p>
+    <p>Решено задач: <strong>{{ tasks }}</strong></p>
+  </div>
+</div>
+{% endblock %}
